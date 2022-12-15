@@ -7,6 +7,23 @@
     <title>Todos</title>
 </head>
 <body>
-    <script src="main.js"></script>
+    <form>
+        <label for="TDTitle">Title:</label>
+        <input type="TDTitle" name="TDTitle" id="TDTitle"><p></p>
+        <label for="TDDescrip">Description:</label>
+        <input type="text" name="TDDescrip" id="TDDescrip"><p></p>
+        <label for="TDDueDate">Due Date:</label>
+        <input type="text" name="TDDueDate" id="TDDueDate"><p></p>
+        <label for="TDPriority">Priority:</label>
+        <select name="TDPriority" id="TDPriority">
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+        </select><p></p>
+        <p></p>
+        <button id="submitB">Submit</button>
+    </form>
+    <p></p>
+    <script src="main.js" defer></script>
 </body>
 </html>
