@@ -7,12 +7,15 @@ let TDDueDate = document.getElementById("TDDueDate");
 let TDPriority = document.getElementById("TDPriority");
 let checkLog = document.getElementById("checkLogs");
 
-let indexCounter = 0;
+let submitP = document.getElementById("submitP");
+let TDProject = document.getElementById("TDProject");
+let projectSection = document.getElementById("projectSection");
 
 const masterList = new Map();
 
 
 import { createNewToDo } from "./createtodo";
+import createNewProject from "./newProject";
 
 class toDoCreate {
     constructor(title, description, dueDate, priority) {
@@ -27,11 +30,15 @@ const secondExample = new toDoCreate ("Sweep Floors", "Clean floors", "Tomorrow"
 
 submitB.addEventListener("click", e => createNewToDo(e));
 
-checkLog.addEventListener("click", e => checkLogs(e));
+submitP.addEventListener("click", e => createNewProject(e));
+
+//checkLog.addEventListener("click", e => checkLogs(e));
 
 
-function checkLogs (e) {
+/*function checkLogs (e) {
     e.preventDefault();
-    console.log(masterList);
-    console.log(indexCounter);
+    let x = indexCounter.getNext;
+    return x;
 }
+
+createNewToDo();*/

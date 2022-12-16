@@ -1,5 +1,5 @@
 
-let indexCounter = 0;
+export let indexCounter = 0
 
 const masterList = new Map();
 
@@ -15,22 +15,20 @@ export default class toDoCreate {
 }
 
 
-
-const secondExample = new toDoCreate ("Sweep Floors", "Clean floors", "Tomorrow", "Low");
-
-
-
-
-
 export function createNewToDo (e){
     e.preventDefault();
-    const exampleTodo = new toDoCreate ("Do dishes", "Clean dishes", "Tonight", "High");
-    masterList.set(exampleTodo, indexCounter);
-    indexCounter++;
+    let newTask = new toDoCreate;
+    newTask.title = TDTitle.value;
+    newTask.description = TDDescrip.value;
+    newTask.dueDate = TDDueDate.value;
+    newTask.priority = TDPriority.value;
+    //const exampleTodo = new toDoCreate ("Do dishes", "Clean dishes", "Tonight", "High");
+    masterList.set(newTask, indexCounter);
+    indexCounter++
     console.log(masterList);
-    console.log(indexCounter);
-}
+    console.log(TDTitle.value);
 
+}
 
 /*function looper (){
 
