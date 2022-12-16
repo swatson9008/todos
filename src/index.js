@@ -5,6 +5,7 @@ let TDTitle = document.getElementById("TDTitle");
 let TDDescrip = document.getElementById("TDDescrip");
 let TDDueDate = document.getElementById("TDDueDate");
 let TDPriority = document.getElementById("TDPriority");
+let checkLog = document.getElementById("checkLogs");
 
 let indexCounter = 0;
 
@@ -26,5 +27,11 @@ const secondExample = new toDoCreate ("Sweep Floors", "Clean floors", "Tomorrow"
 
 submitB.addEventListener("click", e => createNewToDo(e));
 
+checkLog.addEventListener("click", e => checkLogs(e));
 
 
+function checkLogs (e) {
+    e.preventDefault();
+    console.log(masterList);
+    console.log(indexCounter);
+}
