@@ -22,18 +22,22 @@ export function createNewToDo (e){
     newTask.description = TDDescrip.value;
     newTask.dueDate = TDDueDate.value;
     newTask.priority = TDPriority.value;
-    //const exampleTodo = new toDoCreate ("Do dishes", "Clean dishes", "Tonight", "High");
     masterList.set(newTask, indexCounter);
-    indexCounter++
     console.log(masterList);
-    console.log(TDTitle.value);
+    let newSection = document.createElement("div");
+    newSection.id = indexCounter;
+    newSection.classList.add("ToDoListing");
+    newSection.innerHTML = newTask.title + "<p>" + newTask.description + "<p>" + newTask.dueDate + "<p>" + newTask.priority;
+    toDoSection.appendChild(newSection);
+    let changePrioritySection = document.createElement("div");
+    changePrioritySection.classList.add("PriorityBtn");
+    changePrioritySection.innerHTML = priorityOptions.innerHTML;
+    newSection.appendChild(changePrioritySection);
+    let deleteSection = document.createElement("div");
+    deleteSection.classList.add("deleteToDoBtn");
+    deleteSection.innerHTML = "Delete Task?";
+    newSection.appendChild(deleteSection);
 
+    indexCounter++;
 }
 
-/*function looper (){
-
-for (let v = 0; v < toDoCreate.length; v++){
-    console.log(toDoCreate[v]);
-}};
-
-console.log(looper())*/
