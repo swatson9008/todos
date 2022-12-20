@@ -15,9 +15,8 @@ let priorityOptions = document.getElementById("priorityOptions");
 
 let deleteTask = document.getElementById("deleteToDoBtn");
 
-const masterList = new Map();
 
-export default masterList;
+import { masterList } from "./createtodo";
 
 
 import { createNewToDo, taskdelete } from "./createtodo";
@@ -47,12 +46,4 @@ submitP.addEventListener("click", e => createNewProject(e));
 
 //deleteTask.addEventListener("click", e => repopulateTask(e));
 
-function repopulateTask(e){
-    e.preventDefault()
-    masterList.forEach((values, keys) => {
-        let newTask = document.createElement("div");
-        newTask.id = keys;
-        newTask.textContent = "testing";
-        toDoSection.appendChild(newTask);
-    });
-}
+
