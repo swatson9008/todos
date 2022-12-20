@@ -30,7 +30,6 @@ export function createNewToDo (e){
 export function repopulateTask(e){
     e.preventDefault()
     toDoSection.innerHTML = "";
-    node.toDoSection.forEach(n => n.remove());
     masterList.forEach((values, keys) => {
     let newSection = document.createElement("div");
     newSection.id = values;
