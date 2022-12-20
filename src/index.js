@@ -40,9 +40,12 @@ const toDoCollection = (toDoCreate, masterList) => {
 
 }
 
+
+
 submitB.addEventListener("click", e => createNewToDo(e));
 
 submitP.addEventListener("click", e => createNewProject(e));
+
 
 //deleteTask.addEventListener("click", e => repopulateTask(e));
 
