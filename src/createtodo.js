@@ -21,14 +21,14 @@ export function createNewToDo (e){
     console.log(masterList);
 
     indexCounter++;
-    repopulateTask(e);
+    repopulateTask();
 }
 
 
 
 
-export function repopulateTask(e){
-    e.preventDefault()
+export function repopulateTask(){
+  
     toDoSection.innerHTML = "";
     masterList.forEach((values, keys) => {
     let newSection = document.createElement("div");
@@ -50,10 +50,9 @@ export function repopulateTask(e){
 }
 
 export function taskdelete (e){
-    e.preventDefault();
     console.log(e.target.id);
     masterList.delete(e.target.id);
-    repopulateTask(e);
+    repopulateTask();
     
 }
 
