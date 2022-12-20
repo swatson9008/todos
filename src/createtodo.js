@@ -4,15 +4,10 @@ export let indexCounter = 0
 const masterList = new Map();
 
 
+import toDoCreate from "./toDoclass";
 
-export default class toDoCreate {
-    constructor(title, description, dueDate, priority) {
-        this.title = title;
-        this.description = description;
-        this.dueDate = dueDate;
-        this.priority = priority;
-    }
-}
+
+
 
 
 export function createNewToDo (e){
@@ -24,10 +19,21 @@ export function createNewToDo (e){
     newTask.priority = TDPriority.value;
     masterList.set(newTask, indexCounter);
     console.log(masterList);
+
+    indexCounter++;
+    repopulateTask(e);
+}
+
+
+
+
+export function repopulateTask(e){
+    e.preventDefault()
+    masterList.forEach((values, keys) => {
     let newSection = document.createElement("div");
-    newSection.id = indexCounter;
+    newSection.id = values;
     newSection.classList.add("ToDoListing");
-    newSection.innerHTML = newTask.title + "<p>" + newTask.description + "<p>" + newTask.dueDate + "<p>" + newTask.priority;
+    newSection.innerHTML = keys.title + "<p>" + keys.description + "<p>" + keys.dueDate + "<p>" + keys.priority;
     toDoSection.appendChild(newSection);
     let changePrioritySection = document.createElement("div");
     changePrioritySection.classList.add("PriorityBtn");
@@ -35,9 +41,17 @@ export function createNewToDo (e){
     newSection.appendChild(changePrioritySection);
     let deleteSection = document.createElement("div");
     deleteSection.classList.add("deleteToDoBtn");
-    deleteSection.innerHTML = "Delete Task?";
+    deleteSection.id = values;
+    deleteSection.innerHTML = "<button>Delete Task?</button>";
+    deleteSection.addEventListener("click", e => taskdelete(e));
     newSection.appendChild(deleteSection);
+    });
+}
 
-    indexCounter++;
+export function taskdelete (e){
+    e.preventDefault();
+    let thisID = e.target.id
+    console.log(thisID);
+    
 }
 
