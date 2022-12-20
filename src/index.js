@@ -13,22 +13,24 @@ let toDoSection = document.getElementById("toDoSection");
 let projectSection = document.getElementById("projectSection");
 let priorityOptions = document.getElementById("priorityOptions");
 
+let deleteTask = document.getElementById("deleteToDoBtn");
+
 const masterList = new Map();
 
+export default masterList;
 
-import { createNewToDo } from "./createtodo";
+
+import { createNewToDo, taskdelete } from "./createtodo";
 import createNewProject from "./newProject";
 
 import { indexCounter } from "./createtodo";
 
-class toDoCreate {
-    constructor(title, description, dueDate, priority) {
-        this.title = title;
-        this.description = description;
-        this.dueDate = dueDate;
-        this.priority = priority;
-    }
-}
+import deleteThisTask from "./taskDeletion.js";
+
+import toDoCreate from "./toDoclass";
+
+import { taskdelete } from "./createtodo";
+
 
 const toDoCollection = (toDoCreate, masterList) => {
     let defaultCollection = new Map();
@@ -43,9 +45,14 @@ submitB.addEventListener("click", e => createNewToDo(e));
 
 submitP.addEventListener("click", e => createNewProject(e));
 
+//deleteTask.addEventListener("click", e => repopulateTask(e));
 
-
-
-function changePriority () {
-
+function repopulateTask(e){
+    e.preventDefault()
+    masterList.forEach((values, keys) => {
+        let newTask = document.createElement("div");
+        newTask.id = keys;
+        newTask.textContent = "testing";
+        toDoSection.appendChild(newTask);
+    });
 }
