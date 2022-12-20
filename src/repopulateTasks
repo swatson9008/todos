@@ -1,7 +1,7 @@
 
 
 
-export default function repopulateTask(e){
+/*export default function repopulateTask(e){
     e.preventDefault()
     masterList.forEach((values, keys) => {
         let newTask = document.createElement("div");
@@ -9,4 +9,4 @@ export default function repopulateTask(e){
         newTask.textContent = "testing";
         toDoSection.appendChild(newTask);
     });
-}
+}*/
