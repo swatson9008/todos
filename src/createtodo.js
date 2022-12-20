@@ -17,7 +17,7 @@ export function createNewToDo (e){
     newTask.description = TDDescrip.value;
     newTask.dueDate = TDDueDate.value;
     newTask.priority = TDPriority.value;
-    masterList.set(newTask, indexCounter);
+    masterList.set(indexCounter, newTask);
     console.log(masterList);
 
     indexCounter++;
@@ -32,9 +32,9 @@ export function repopulateTask(e){
     toDoSection.innerHTML = "";
     masterList.forEach((values, keys) => {
     let newSection = document.createElement("div");
-    newSection.id = values;
+    newSection.id = keys;
     newSection.classList.add("ToDoListing");
-    newSection.innerHTML = keys.title + "<p>" + keys.description + "<p>" + keys.dueDate + "<p>" + keys.priority;
+    newSection.innerHTML = values.title + "<p>" + values.description + "<p>" + values.dueDate + "<p>" + values.priority;
     toDoSection.appendChild(newSection);
     let changePrioritySection = document.createElement("div");
     changePrioritySection.classList.add("PriorityBtn");
@@ -42,8 +42,8 @@ export function repopulateTask(e){
     newSection.appendChild(changePrioritySection);
     let deleteSection = document.createElement("div");
     deleteSection.classList.add("deleteToDoBtn");
-    deleteSection.id = values;
-    deleteSection.innerHTML = "<button>Delete Task?</button>";
+    deleteSection.id = keys;
+    deleteSection.innerHTML = "<button id =" + deleteSection.id + ">Delete Task?</button>";
     deleteSection.addEventListener("click", e => taskdelete(e));
     newSection.appendChild(deleteSection);
     });
@@ -52,6 +52,8 @@ export function repopulateTask(e){
 export function taskdelete (e){
     e.preventDefault();
     console.log(e.target.id);
+    masterList.delete(e.target.id);
+    repopulateTask(e);
     
 }
 
