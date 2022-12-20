@@ -52,9 +52,7 @@ export function repopulateTask(e){
 
 export function taskdelete (e){
     e.preventDefault();
-    let toDoSection = document.getElementById("toDoSection");
-    toDoSection.innerHTML = "";
-    console.log(masterList);
+    console.log(e.target.id);
     
 }
 
