@@ -1,7 +1,7 @@
 
 export let indexCounter = 0
 
-const masterList = new Map();
+export const masterList = new Map();
 
 
 import toDoCreate from "./toDoclass";
@@ -50,8 +50,7 @@ export function repopulateTask(e){
 
 export function taskdelete (e){
     e.preventDefault();
-    let thisID = e.target.id
-    console.log(thisID);
+    console.log();
     
 }
 
