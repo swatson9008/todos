@@ -51,7 +51,6 @@ export function repopulateTask(){
 
 export function taskdelete (e){
     let deleteID = parseInt(e.target.id);
-    console.log(deleteID);
     masterList.delete(deleteID);
     repopulateTask();
     
