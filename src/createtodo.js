@@ -39,6 +39,8 @@ export function repopulateTask(){
     let changePrioritySection = document.createElement("div");
     changePrioritySection.classList.add("PriorityBtn");
     changePrioritySection.innerHTML = priorityOptions.innerHTML;
+    changePrioritySection.id = keys;
+    changePrioritySection.addEventListener("change", e => prioritySwitch(e))
     newSection.appendChild(changePrioritySection);
     let deleteSection = document.createElement("div");
     deleteSection.classList.add("deleteToDoBtn");
@@ -56,3 +58,14 @@ export function taskdelete (e){
     
 }
 
+export function prioritySwitch (e){
+    e.preventDefault();
+    let priorityValue = e.target.value;
+    let keyValue = parseInt(e.target.parentElement.id);
+    console.log(keyValue);
+    masterList.set(keyValue, {
+        ...masterList.get(keyValue), priority: priorityValue
+    });
+    console.log(masterList);
+    repopulateTask();
+}
