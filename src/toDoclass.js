@@ -7,8 +7,3 @@ export default class toDoCreate {
     }
 };
 
-//<label for="TDPriority">Priority:</label>
-/*        <select name="TDPriority" id="TDPriority">
-        <option value="High">High</option>
-        <option value="Medium">Medium</option>
-        <option value="Low">Low</option>*/

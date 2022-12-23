@@ -30,6 +30,17 @@ import toDoCreate from "./toDoclass";
 
 import { repopulateTask } from "./createtodo";
 
+import { projectCounter } from "./newProject";
+
+import { masterPList } from "./newProject";
+
+import projectCreate from "./projectClass";
+
+import { repopulateProjects } from "./newProject";
+
+import { SampleP } from "./newProject";
+
+SampleP();
 
 
 
