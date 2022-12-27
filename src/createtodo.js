@@ -19,7 +19,7 @@ export function createNewToDo (e){
     newTask.description = TDDescrip.value;
     newTask.dueDate = TDDueDate.value;
     newTask.priority = TDPriority.value;
-    newTask.project = addToProject.value;
+    //newTask.project = addToProject.id;
     masterList.set(indexCounter, newTask);
     console.log(masterList);
 

@@ -21,7 +21,7 @@ export default function createNewProject (e) {
     projectCounter++;
     console.log(masterPList);
     repopulateProjects();
-    
+    TDProject.value = "";
 
 }
 
