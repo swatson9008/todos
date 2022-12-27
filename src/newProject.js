@@ -42,6 +42,11 @@ export function repopulateProjects(){
     projectOption.value = keys;
     projectOption.id = values.name;
     addToProject.appendChild(projectOption);
+    let projectDelete = document.createElement("div")
+    projectDelete.id = keys;
+    projectDelete.innerHTML = "<button id =" + keys + ">Delete Project?</button>";
+    projectDelete.addEventListener("click", e => deleteProject(e));
+    newProjectSection.appendChild(projectDelete);
     /*let addTask = document.createElement("div");
     addTask.id = keys;
     addTask.innerHTML = */
@@ -71,4 +76,11 @@ export function removeATask (e) {
     repopulateProjects();
     
     
+}
+
+export function deleteProject(e) {
+    e.preventDefault;
+    let projectValue = parseInt(e.target.id);
+    masterPList.delete(projectValue);
+    repopulateProjects();
 }
