@@ -6,6 +6,8 @@ export let masterPList = new Map();
 
 export let projectCounter = 0;
 
+import { taskdelete } from "./createtodo";
+
 
 
 export default function createNewProject (e) {
@@ -60,6 +62,13 @@ export function addTasks (e) {
 
 export function removeATask (e) {
     e.preventDefault();
-    let taskValue = e.target.id;
-    console.log(taskValue);
+    let projectValue = parseInt(e.target.parentElement.id);
+    let taskValue = parseInt(e.target.id);
+    let temp = masterPList.get(projectValue);
+    temp.tasks.splice(taskValue, 1);
+    masterPList.set(projectValue, temp);
+    console.log(masterPList);
+    repopulateProjects();
+    
+    
 }

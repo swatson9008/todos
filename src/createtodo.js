@@ -19,7 +19,7 @@ export function createNewToDo (e){
     newTask.description = TDDescrip.value;
     newTask.dueDate = TDDueDate.value;
     newTask.priority = TDPriority.value;
-    //newTask.project = addToProject.id;
+    newTask.project = addToProject.value;
     masterList.set(indexCounter, newTask);
     console.log(masterList);
 
@@ -47,9 +47,9 @@ export function repopulateTask(){
     newSection.appendChild(changePrioritySection);
     let deleteSection = document.createElement("div");
     deleteSection.classList.add("deleteToDoBtn");
-    deleteSection.id = keys;
-    deleteSection.innerHTML = "<button id =" + deleteSection.id + ">Delete Task?</button>";
-    deleteSection.addEventListener("click", e => removeATask(e));
+    deleteSection.id = values.project;
+    deleteSection.innerHTML = "<button id =" + keys + ">Delete Task?</button>";
+    deleteSection.addEventListener("click", e => {taskdelete(e), removeATask(e)});
     newSection.appendChild(deleteSection);
     });
 }
