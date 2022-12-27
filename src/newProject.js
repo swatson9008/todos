@@ -28,6 +28,7 @@ export default function createNewProject (e) {
 export function repopulateProjects(){
 
     projectSection.innerHTML = "";
+    addToProject.innerHTML = "";
     masterPList.forEach((values, keys) => {
     let newProjectSection = document.createElement("div");
     newProjectSection.id = keys;
