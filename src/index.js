@@ -14,6 +14,7 @@ let projectSection = document.getElementById("projectSection");
 let priorityOptions = document.getElementById("priorityOptions");
 
 let deleteTask = document.getElementById("deleteToDoBtn");
+let addToProject = document.getElementById("addToProject");
 
 
 import { masterList } from "./createtodo";
@@ -38,9 +39,9 @@ import projectCreate from "./projectClass";
 
 import { repopulateProjects } from "./newProject";
 
-import { SampleP } from "./newProject";
+import { addTasks } from "./newProject";
 
-SampleP();
+
 
 
 
@@ -55,7 +56,7 @@ const toDoCollection = (toDoCreate, masterList) => {
 
 
 
-submitB.addEventListener("click", e => createNewToDo(e));
+submitB.addEventListener("click", e => {createNewToDo(e), addTasks(e)});
 
 submitP.addEventListener("click", e => createNewProject(e));
 
