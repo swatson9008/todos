@@ -6,6 +6,8 @@ export const masterList = new Map();
 
 import toDoCreate from "./toDoclass";
 
+import { removeATask } from "./newProject";
+
 
 
 
@@ -17,6 +19,7 @@ export function createNewToDo (e){
     newTask.description = TDDescrip.value;
     newTask.dueDate = TDDueDate.value;
     newTask.priority = TDPriority.value;
+    newTask.project = addToProject.value;
     masterList.set(indexCounter, newTask);
     console.log(masterList);
 
@@ -46,7 +49,7 @@ export function repopulateTask(){
     deleteSection.classList.add("deleteToDoBtn");
     deleteSection.id = keys;
     deleteSection.innerHTML = "<button id =" + deleteSection.id + ">Delete Task?</button>";
-    deleteSection.addEventListener("click", e => taskdelete(e));
+    deleteSection.addEventListener("click", e => removeATask(e));
     newSection.appendChild(deleteSection);
     });
 }
