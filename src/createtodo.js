@@ -22,6 +22,7 @@ export function createNewToDo (e){
     newTask.project = addToProject.value;
     masterList.set(indexCounter, newTask);
     console.log(masterList);
+    console.log(addToProject.value);
 
     indexCounter++;
     repopulateTask();
