@@ -24,6 +24,7 @@ export default function createNewProject (e) {
     console.log(masterPList);
     repopulateProjects();
     TDProject.value = "";
+    
 
 }
 
