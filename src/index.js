@@ -23,7 +23,7 @@ import { masterList } from "./createtodo";
 import { createNewToDo, taskdelete } from "./createtodo";
 import createNewProject from "./newProject";
 
-import { indexCounter } from "./createtodo";
+//import { indexCounter } from "./createtodo";
 
 import deleteThisTask from "./taskDeletion.js";
 
@@ -40,6 +40,12 @@ import projectCreate from "./projectClass";
 import { repopulateProjects } from "./newProject";
 
 import { addTasks } from "./newProject";
+
+import { IC } from "./createtodo";
+
+import { checkCounter } from "./createtodo";
+
+
 
 
 
