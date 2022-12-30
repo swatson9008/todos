@@ -14,10 +14,24 @@ localStorage.setItem("indexC", IC);
   return IC;
 }
 
+//export let masterL = new Map(JSON.parse(localStorage.MLToDo));
 
+export let masterList = new Map();
 
-export const masterList = new Map();
+export function checkMapList () {
+    let masterL = new Map(JSON.parse(localStorage.MLToDo));
+    if (masterL === ""){masterList === new Map()}
+    else {masterList = masterL}
+    repopulateTask()
 
+}
+
+export function addLCTODO () {
+    localStorage.MLToDo = JSON.stringify(Array.from(masterList));
+    console.log(localStorage.MLToDo);
+}
+
+checkMapList();
 
 import toDoCreate from "./toDoclass";
 
@@ -29,6 +43,7 @@ import { removeATask } from "./newProject";
 
 export function createNewToDo (e){
     e.preventDefault();
+    checkCounter()
     let newTask = new toDoCreate;
     newTask.title = TDTitle.value;
     newTask.description = TDDescrip.value;
@@ -38,7 +53,6 @@ export function createNewToDo (e){
     masterList.set(IC, newTask);
     console.log(masterList);
     console.log(addToProject.value);
-    checkCounter()
     repopulateTask();
 }
 
@@ -67,6 +81,9 @@ export function repopulateTask(){
     deleteSection.addEventListener("click", e => {taskdelete(e), removeATask(e)});
     newSection.appendChild(deleteSection);
     });
+    addLCTODO();
+    
+
 }
 
 export function taskdelete (e){

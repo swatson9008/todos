@@ -45,6 +45,22 @@ import { IC } from "./createtodo";
 
 import { checkCounter } from "./createtodo";
 
+import { ICP } from "./newProject";
+
+import { checkCounterP } from "./newProject";
+
+import { masterL } from "./createtodo";
+
+import { checkMapList } from "./createtodo";
+
+import { addLSTODO } from "./createtodo";
+
+import { checkMapPList } from "./newProject";
+
+import { addLSP } from "./newProject";
+
+
+
 
 
 

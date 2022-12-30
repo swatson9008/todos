@@ -1,17 +1,53 @@
+export let ICP = localStorage.getItem("indexCP");
+
+export function checkCounterP () {
+  if(Number.isNaN(ICP)){
+    ICP=0;
+  } else {
+    ++ICP;
+  }
+
+console.log(ICP);
+
+localStorage.setItem("indexCP", ICP);
+  return ICP;
+}
+
+
+
 import { masterList } from "./createtodo";
 
 import projectCreate from "./projectClass";
+
+import { taskdelete } from "./createtodo";
 
 export let masterPList = new Map();
 
 export let projectCounter = 0;
 
-import { taskdelete } from "./createtodo";
+
+
+export function checkMapPList () {
+    let masterLP = new Map(JSON.parse(localStorage.mlp));
+    if (masterLP === ""){masterPList === new Map()}
+    else {masterPList = masterLP}
+    repopulateProjects()
+
+}
+
+export function addLSP () {
+    localStorage.mlp = JSON.stringify(Array.from(masterPList));
+    console.log(localStorage.mlp);
+}
+
+checkMapPList();
+
 
 
 
 export default function createNewProject (e) {
     e.preventDefault();
+    checkCounterP();
     /*let newProject = document.createElement("div");
     newProject.id = TDProject.value;
     newProject.classList.add("projectLists");
@@ -19,8 +55,7 @@ export default function createNewProject (e) {
     let newP = new projectCreate;
     newP.name = TDProject.value;
     newP.tasks = [];
-    masterPList.set(projectCounter, newP);
-    projectCounter++;
+    masterPList.set(ICP, newP);
     console.log(masterPList);
     repopulateProjects();
     TDProject.value = "";
@@ -52,6 +87,7 @@ export function repopulateProjects(){
     addTask.id = keys;
     addTask.innerHTML = */
     });
+    addLSP();
     }
 
 export function addTasks (e) {
