@@ -1,5 +1,20 @@
 
-export let indexCounter = 0
+export let IC = localStorage.getItem("indexC");
+
+export function checkCounter () {
+  if(Number.isNaN(IC)){
+    IC=0;
+  } else {
+    ++IC;
+  }
+
+console.log(IC);
+
+localStorage.setItem("indexC", IC);
+  return IC;
+}
+
+
 
 export const masterList = new Map();
 
@@ -20,11 +35,10 @@ export function createNewToDo (e){
     newTask.dueDate = TDDueDate.value;
     newTask.priority = TDPriority.value;
     newTask.project = addToProject.value;
-    masterList.set(indexCounter, newTask);
+    masterList.set(IC, newTask);
     console.log(masterList);
     console.log(addToProject.value);
-
-    indexCounter++;
+    checkCounter()
     repopulateTask();
 }
 
