@@ -21,9 +21,9 @@ import projectCreate from "./projectClass";
 
 import { taskdelete } from "./createtodo";
 
-export let masterPList = new Map();
-
 export let projectCounter = 0;
+
+export let masterPList = new Map();
 
 
 
