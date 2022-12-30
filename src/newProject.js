@@ -48,10 +48,6 @@ checkMapPList();
 export default function createNewProject (e) {
     e.preventDefault();
     checkCounterP();
-    /*let newProject = document.createElement("div");
-    newProject.id = TDProject.value;
-    newProject.classList.add("projectLists");
-    projectSection.appendChild(newProject);*/
     let newP = new projectCreate;
     newP.name = TDProject.value;
     newP.tasks = [];
