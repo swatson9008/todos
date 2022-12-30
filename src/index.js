@@ -49,7 +49,7 @@ import { ICP } from "./newProject";
 
 import { checkCounterP } from "./newProject";
 
-//import { masterL } from "./createtodo";
+
 
 import { checkMapList } from "./createtodo";
 
@@ -67,14 +67,7 @@ import { addLSP } from "./newProject";
 
 
 
-const toDoCollection = (toDoCreate, masterList) => {
-    let defaultCollection = new Map();
-    masterList.array.forEach(element => {
-        defaultCollection.set;
-        return defaultCollection;
-    });   
 
-}
 
 
 
