@@ -40,7 +40,7 @@ export function addLSP () {
     console.log(localStorage.mlp);
 }
 
-//checkMapPList();
+checkMapPList();
 
 
 
