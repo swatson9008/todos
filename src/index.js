@@ -49,7 +49,7 @@ import { ICP } from "./newProject";
 
 import { checkCounterP } from "./newProject";
 
-import { masterL } from "./createtodo";
+//import { masterL } from "./createtodo";
 
 import { checkMapList } from "./createtodo";
 
