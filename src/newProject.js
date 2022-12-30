@@ -67,6 +67,9 @@ export function repopulateProjects(){
 
     projectSection.innerHTML = "";
     addToProject.innerHTML = "";
+    let blankSection = document.createElement("option");
+    blankSection.textContent = "";
+    addToProject.appendChild(blankSection);
     masterPList.forEach((values, keys) => {
     let newProjectSection = document.createElement("div");
     newProjectSection.id = keys;
