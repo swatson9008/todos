@@ -28,9 +28,17 @@ export let masterPList = new Map();
 
 
 export function checkMapPList () {
-    let masterLP = new Map(JSON.parse(localStorage.mlp));
+    /*let masterLP = new Map(JSON.parse(localStorage.mlp));
     if (masterLP === ""){masterPList === new Map()}
-    else {masterPList = masterLP}
+    else {masterPList = masterLP}*/
+    if(!localStorage.getItem("mlp")){
+        repopulateStorage();
+    }
+    else{};
+    function repopulateStorage(){
+        let masterLP = new Map(JSON.parse(localStorage.mlp));
+        let masterPList = masterLP;  
+    }
     repopulateProjects()
 
 }
