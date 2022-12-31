@@ -27,14 +27,14 @@ export function checkMapList () {
 }
 
 export function repopulateToDoStorage(){
-    let masterL = new Map(JSON.parse(localStorage.getItem(MLToDo)));
+    let masterL = new Map(JSON.parse(localStorage.getItem("MLToDo")));
     let masterList = masterL;  
     repopulateTask();
 }
 
 export function addLCTODO () {
-    localStorage.setItem(MLToDo) = JSON.stringify(Array.from(masterList));
-    console.log(localStorage.MLToDo);
+    localStorage.setItem("MLToDo") = JSON.stringify(Array.from(masterList));
+    console.log(localStorage.getItem("MLToDo"));
 }
 
 checkMapList();
