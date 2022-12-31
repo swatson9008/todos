@@ -27,23 +27,31 @@ export let masterPList = new Map();
 
 
 
-export function checkMapPList () {
-    if(!localStorage.getItem("mlp")){
-        repopulatePStorage();
+
+
+export function checkMapPList() {
+    let storage = localStorage.getItem('mlp') // set 'storage' to whatever the contents of 'mlp' is
+    let masterLP; // create a new variable
+    //if that storage ISN'T null, set the value of masterLP
+    if(storage !== null) masterLP = new Map(JSON.parse(localStorage.mlp));
+  
+    //if masterLP is still undefined, set masterPList to a new map like it seemed like you wanted
+    if (masterLP === undefined) {
+      //in your original code you wrote: masterPList === new Map()
+      masterPList = new Map()
+    } else {
+      // else set value of masterPList to masterLP
+      masterPList = masterLP
     }
-    else{};
-
+  
+    // repopulate projects
+    repopulateProjects()
 }
 
-export function repopulatePStorage(){
-    let masterLP = new Map(JSON.parse(localStorage.getItem("mlp")));
-    let masterPList = masterLP;
-    repopulateProjects();  
-}
 
 export function addLSP () {
-    localStorage.setItem("mlp") = JSON.stringify(Array.from(masterPList));
-    console.log(localStorage.getItem("mlp"));
+    localStorage.mlp = JSON.stringify(Array.from(masterPList));
+    console.log(localStorage.mlp);
 }
 
 checkMapPList();
