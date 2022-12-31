@@ -19,9 +19,15 @@ localStorage.setItem("indexC", IC);
 export let masterList = new Map();
 
 export function checkMapList () {
-    let masterL = new Map(JSON.parse(localStorage.MLToDo));
-    if (masterL === ""){masterList === new Map()}
-    else {masterList = masterL}
+    if(!localStorage.getItem("MLTDO")){
+        repopulateStorage();
+    }
+    else{};
+    function repopulateStorage(){
+        let masterL = new Map(JSON.parse(localStorage.MLToDo));
+        let masterList = masterL;  
+    }
+
     repopulateTask()
 
 }
