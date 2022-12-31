@@ -28,23 +28,21 @@ export let masterPList = new Map();
 
 
 export function checkMapPList () {
-    /*let masterLP = new Map(JSON.parse(localStorage.mlp));
-    if (masterLP === ""){masterPList === new Map()}
-    else {masterPList = masterLP}*/
     if(!localStorage.getItem("mlp")){
-        repopulateStorage();
+        repopulatePStorage();
     }
     else{};
-    function repopulateStorage(){
-        let masterLP = new Map(JSON.parse(localStorage.mlp));
-        let masterPList = masterLP;  
-    }
-    repopulateProjects()
 
 }
 
+export function repopulatePStorage(){
+    let masterLP = new Map(JSON.parse(localStorage.getItem(mlp)));
+    let masterPList = masterLP;
+    repopulateProjects();  
+}
+
 export function addLSP () {
-    localStorage.mlp = JSON.stringify(Array.from(masterPList));
+    localStorage.setItem(mlp) = JSON.stringify(Array.from(masterPList));
     console.log(localStorage.mlp);
 }
 

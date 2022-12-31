@@ -19,21 +19,21 @@ localStorage.setItem("indexC", IC);
 export let masterList = new Map();
 
 export function checkMapList () {
-    if(!localStorage.getItem("MLTDO")){
-        repopulateStorage();
+    if(localStorage.getItem("MLTDO")){
+        repopulateToDoStorage();
     }
     else{};
-    function repopulateStorage(){
-        let masterL = new Map(JSON.parse(localStorage.MLToDo));
-        let masterList = masterL;  
-    }
-
-    repopulateTask()
 
 }
 
+export function repopulateToDoStorage(){
+    let masterL = new Map(JSON.parse(localStorage.getItem(MLToDo)));
+    let masterList = masterL;  
+    repopulateTask();
+}
+
 export function addLCTODO () {
-    localStorage.MLToDo = JSON.stringify(Array.from(masterList));
+    localStorage.setItem(MLToDo) = JSON.stringify(Array.from(masterList));
     console.log(localStorage.MLToDo);
 }
 
