@@ -18,23 +18,28 @@ localStorage.setItem("indexC", IC);
 
 export let masterList = new Map();
 
-export function checkMapList () {
-    if(localStorage.getItem("MLTDO")){
-        repopulateToDoStorage();
+export function checkMapList() {
+    let storage = localStorage.getItem('MLToDo') // set 'storage' to whatever the contents of 'mlp' is
+    let masterL; // create a new variable
+    //if that storage ISN'T null, set the value of masterLP
+    if(storage !== null) masterL = new Map(JSON.parse(localStorage.MLToDo));
+  
+    //if masterLP is still undefined, set masterPList to a new map like it seemed like you wanted
+    if (masterL === undefined) {
+      //in your original code you wrote: masterPList === new Map()
+      masterList = new Map()
+    } else {
+      // else set value of masterPList to masterLP
+      masterList = masterL
     }
-    else{};
-
-}
-
-export function repopulateToDoStorage(){
-    let masterL = new Map(JSON.parse(localStorage.getItem("MLToDo")));
-    let masterList = masterL;  
+  
+    // repopulate projects
     repopulateTask();
 }
 
-export function addLCTODO () {
-    localStorage.setItem("MLToDo") = JSON.stringify(Array.from(masterList));
-    console.log(localStorage.getItem("MLToDo"));
+export function addLSTODO () {
+    localStorage.MLToDo = JSON.stringify(Array.from(masterList));
+    console.log(localStorage.MLToDo);
 }
 
 checkMapList();
@@ -87,7 +92,7 @@ export function repopulateTask(){
     deleteSection.addEventListener("click", e => {taskdelete(e), removeATask(e)});
     newSection.appendChild(deleteSection);
     });
-    addLCTODO();
+    addLSTODO();
     
 
 }
