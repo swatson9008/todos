@@ -36,14 +36,14 @@ export function checkMapPList () {
 }
 
 export function repopulatePStorage(){
-    let masterLP = new Map(JSON.parse(localStorage.getItem(mlp)));
+    let masterLP = new Map(JSON.parse(localStorage.getItem("mlp")));
     let masterPList = masterLP;
     repopulateProjects();  
 }
 
 export function addLSP () {
-    localStorage.setItem(mlp) = JSON.stringify(Array.from(masterPList));
-    console.log(localStorage.mlp);
+    localStorage.setItem("mlp") = JSON.stringify(Array.from(masterPList));
+    console.log(localStorage.getItem("mlp"));
 }
 
 checkMapPList();
