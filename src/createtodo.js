@@ -67,7 +67,7 @@ export function createNewToDo (e){
 
 
 
-
+//repopulates todos on the html page
 export function repopulateTask(){
   
     toDoSection.innerHTML = "";
@@ -95,6 +95,8 @@ export function repopulateTask(){
 
 }
 
+
+//function that handles deleting tasks
 export function taskdelete (e){
     let deleteID = parseInt(e.target.id);
     masterList.delete(deleteID);
@@ -102,14 +104,13 @@ export function taskdelete (e){
     
 }
 
+//function that handles changing the priority
 export function prioritySwitch (e){
     e.preventDefault();
     let priorityValue = e.target.value;
     let keyValue = parseInt(e.target.parentElement.id);
-    console.log(keyValue);
     masterList.set(keyValue, {
         ...masterList.get(keyValue), priority: priorityValue
     });
-    console.log(masterList);
     repopulateTask();
 }

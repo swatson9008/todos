@@ -1,5 +1,13 @@
+
+//imported functions and maps
+import { masterList } from "./createtodo";
+import projectCreate from "./projectClass";
+import { taskdelete } from "./createtodo";
+
+//counter for project values
 export let ICP = localStorage.getItem("indexCP");
 
+//check for counter values
 export function checkCounterP () {
   if(Number.isNaN(ICP)){
     ICP=0;
@@ -7,58 +15,42 @@ export function checkCounterP () {
     ++ICP;
   }
 
-console.log(ICP);
-
 localStorage.setItem("indexCP", ICP);
   return ICP;
 }
 
-
-
-import { masterList } from "./createtodo";
-
-import projectCreate from "./projectClass";
-
-import { taskdelete } from "./createtodo";
-
-//export let projectCounter = 0;
-
+//declaring masterlist map to hold projects
 export let masterPList = new Map();
 
 
-
-
-
+//checks localStorage and sets it up
 export function checkMapPList() {
-    let storage = localStorage.getItem('mlp') // set 'storage' to whatever the contents of 'mlp' is
-    let masterLP; // create a new variable
-    //if that storage ISN'T null, set the value of masterLP
+    let storage = localStorage.getItem('mlp') 
+    let masterLP;
+    
     if(storage !== null) masterLP = new Map(JSON.parse(localStorage.mlp));
   
-    //if masterLP is still undefined, set masterPList to a new map like it seemed like you wanted
+    
     if (masterLP === undefined) {
-      //in your original code you wrote: masterPList === new Map()
+      
       masterPList = new Map()
     } else {
-      // else set value of masterPList to masterLP
+      
       masterPList = masterLP
     }
   
-    // repopulate projects
+    
     repopulateProjects()
 }
 
-
+//adds projects to localStorage
 export function addLSP () {
     localStorage.mlp = JSON.stringify(Array.from(masterPList));
-    console.log(localStorage.mlp);
 }
 
 checkMapPList();
 
-
-
-
+//creates a new project from the class constructor
 export default function createNewProject (e) {
     e.preventDefault();
     checkCounterP();
@@ -66,13 +58,11 @@ export default function createNewProject (e) {
     newP.name = TDProject.value;
     newP.tasks = [];
     masterPList.set(ICP, newP);
-    console.log(masterPList);
     repopulateProjects();
     TDProject.value = "";
-    
-
 }
 
+//repopulates projects on the html page
 export function repopulateProjects(){
 
     projectSection.innerHTML = "";
@@ -96,25 +86,22 @@ export function repopulateProjects(){
     projectDelete.innerHTML = "<button id =" + keys + ">Delete Project?</button>";
     projectDelete.addEventListener("click", e => deleteProject(e));
     newProjectSection.appendChild(projectDelete);
-    /*let addTask = document.createElement("div");
-    addTask.id = keys;
-    addTask.innerHTML = */
     });
     addLSP();
     }
 
+//function that handles when a new todo is added to a project
 export function addTasks (e) {
     e.preventDefault();
     let projectValue = parseInt(addToProject.value);
     let temp = masterPList.get(projectValue);
     let taskName = TDTitle.value;
     temp.tasks.push(taskName);
-    console.log(temp);
     masterPList.set(projectValue, temp);
-    console.log(masterPList);
     repopulateProjects();
 }
 
+//function that handles updating projects when a task is deleted
 export function removeATask (e) {
     e.preventDefault();
     let projectValue = parseInt(e.target.parentElement.id);
@@ -122,12 +109,10 @@ export function removeATask (e) {
     let temp = masterPList.get(projectValue);
     temp.tasks.splice(taskValue, 1);
     masterPList.set(projectValue, temp);
-    console.log(masterPList);
-    repopulateProjects();
-    
-    
+    repopulateProjects(); 
 }
 
+//function that handles deleting projects
 export function deleteProject(e) {
     e.preventDefault;
     let projectValue = parseInt(e.target.id);
