@@ -1,6 +1,13 @@
 
+//imported functions
+import toDoCreate from "./toDoclass";
+import { removeATask } from "./newProject";
+
+
+//counter for todo values
 export let IC = localStorage.getItem("indexC");
 
+//check for counter values
 export function checkCounter () {
   if(Number.isNaN(IC)){
     IC=0;
@@ -8,50 +15,43 @@ export function checkCounter () {
     ++IC;
   }
 
-console.log(IC);
-
 localStorage.setItem("indexC", IC);
   return IC;
 }
 
-//export let masterL = new Map(JSON.parse(localStorage.MLToDo));
 
+//declaring masterlist map to hold todo tasks
 export let masterList = new Map();
 
+//checks localStorage and sets it up
 export function checkMapList() {
-    let storage = localStorage.getItem('MLToDo') // set 'storage' to whatever the contents of 'mlp' is
-    let masterL; // create a new variable
-    //if that storage ISN'T null, set the value of masterLP
+    let storage = localStorage.getItem('MLToDo') 
+    let masterL; 
+  
     if(storage !== null) masterL = new Map(JSON.parse(localStorage.MLToDo));
   
-    //if masterLP is still undefined, set masterPList to a new map like it seemed like you wanted
+
     if (masterL === undefined) {
-      //in your original code you wrote: masterPList === new Map()
+      
       masterList = new Map()
     } else {
-      // else set value of masterPList to masterLP
+      
       masterList = masterL
     }
   
-    // repopulate projects
+   
     repopulateTask();
 }
 
+//adds todos to localStorage
 export function addLSTODO () {
     localStorage.MLToDo = JSON.stringify(Array.from(masterList));
-    console.log(localStorage.MLToDo);
 }
 
 checkMapList();
 
-import toDoCreate from "./toDoclass";
 
-import { removeATask } from "./newProject";
-
-
-
-
-
+//creates a new todo from the class constructor
 export function createNewToDo (e){
     e.preventDefault();
     checkCounter()
@@ -62,8 +62,6 @@ export function createNewToDo (e){
     newTask.priority = TDPriority.value;
     newTask.project = addToProject.value;
     masterList.set(IC, newTask);
-    console.log(masterList);
-    console.log(addToProject.value);
     repopulateTask();
 }
 
