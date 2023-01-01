@@ -1,3 +1,5 @@
+
+//class constructor for the todos
 export default class toDoCreate {
     constructor(title, description, dueDate, priority, project) {
         this.title = title;
