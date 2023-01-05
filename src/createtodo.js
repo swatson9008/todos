@@ -1,11 +1,21 @@
-//imported functions
-import toDoCreate from "./toDoclass";
-import { removeATask } from "./newProject";
+/* eslint-disable no-sequences */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable operator-linebreak */
+/* eslint-disable prefer-template */
+/* eslint-disable no-undef */
+/* eslint-disable new-cap */
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-plusplus */
+/* eslint-disable import/no-mutable-exports */
+/* eslint-disable import/no-cycle */
+// imported functions
+import toDoCreate from './toDoclass';
+import { removeATask } from './newProject';
 
-//counter for todo values
-export let IC = localStorage.getItem("indexC");
+// counter for todo values
+export let IC = localStorage.getItem('indexC');
 
-//check for counter values
+// check for counter values
 export function checkCounter() {
   if (Number.isNaN(IC)) {
     IC = 0;
@@ -13,16 +23,16 @@ export function checkCounter() {
     ++IC;
   }
 
-  localStorage.setItem("indexC", IC);
+  localStorage.setItem('indexC', IC);
   return IC;
 }
 
-//declaring masterlist map to hold todo tasks
+// declaring masterlist map to hold todo tasks
 export let masterList = new Map();
 
-//checks localStorage and sets it up
+// checks localStorage and sets it up
 export function checkMapList() {
-  let storage = localStorage.getItem("MLToDo");
+  const storage = localStorage.getItem('MLToDo');
   let masterL;
 
   if (storage !== null) masterL = new Map(JSON.parse(localStorage.MLToDo));
@@ -36,18 +46,18 @@ export function checkMapList() {
   repopulateTask();
 }
 
-//adds todos to localStorage
+// adds todos to localStorage
 export function addLSTODO() {
   localStorage.MLToDo = JSON.stringify(Array.from(masterList));
 }
 
 checkMapList();
 
-//creates a new todo from the class constructor
+// creates a new todo from the class constructor
 export function createNewToDo(e) {
   e.preventDefault();
   checkCounter();
-  let newTask = new toDoCreate();
+  const newTask = new toDoCreate();
   newTask.title = TDTitle.value;
   newTask.description = TDDescrip.value;
   newTask.dueDate = TDDueDate.value;
@@ -57,33 +67,33 @@ export function createNewToDo(e) {
   repopulateTask();
 }
 
-//repopulates todos on the html page
+// repopulates todos on the html page
 export function repopulateTask() {
-  toDoSection.innerHTML = "";
+  toDoSection.innerHTML = '';
   masterList.forEach((values, keys) => {
-    let newSection = document.createElement("div");
+    const newSection = document.createElement('div');
     newSection.id = keys;
-    newSection.classList.add("ToDoListing");
+    newSection.classList.add('ToDoListing');
     newSection.innerHTML =
       values.title +
-      "<p>" +
+      '<p>' +
       values.description +
-      "<p>" +
+      '<p>' +
       values.dueDate +
-      "<p>" +
+      '<p>' +
       values.priority;
     toDoSection.appendChild(newSection);
-    let changePrioritySection = document.createElement("div");
-    changePrioritySection.classList.add("PriorityBtn");
+    const changePrioritySection = document.createElement('div');
+    changePrioritySection.classList.add('PriorityBtn');
     changePrioritySection.innerHTML = priorityOptions.innerHTML;
     changePrioritySection.id = keys;
-    changePrioritySection.addEventListener("change", (e) => prioritySwitch(e));
+    changePrioritySection.addEventListener('change', (e) => prioritySwitch(e));
     newSection.appendChild(changePrioritySection);
-    let deleteSection = document.createElement("div");
-    deleteSection.classList.add("deleteToDoBtn");
+    const deleteSection = document.createElement('div');
+    deleteSection.classList.add('deleteToDoBtn');
     deleteSection.id = values.project;
-    deleteSection.innerHTML = "<button id =" + keys + ">Delete Task?</button>";
-    deleteSection.addEventListener("click", (e) => {
+    deleteSection.innerHTML = '<button id =' + keys + '>Delete Task?</button>';
+    deleteSection.addEventListener('click', (e) => {
       taskdelete(e), removeATask(e);
     });
     newSection.appendChild(deleteSection);
@@ -91,18 +101,18 @@ export function repopulateTask() {
   addLSTODO();
 }
 
-//function that handles deleting tasks
+// function that handles deleting tasks
 export function taskdelete(e) {
-  let deleteID = parseInt(e.target.id);
+  const deleteID = parseInt(e.target.id, 10);
   masterList.delete(deleteID);
   repopulateTask();
 }
 
-//function that handles changing the priority
+// function that handles changing the priority
 export function prioritySwitch(e) {
   e.preventDefault();
-  let priorityValue = e.target.value;
-  let keyValue = parseInt(e.target.parentElement.id);
+  const priorityValue = e.target.value;
+  const keyValue = parseInt(e.target.parentElement.id, 10);
   masterList.set(keyValue, {
     ...masterList.get(keyValue),
     priority: priorityValue,
