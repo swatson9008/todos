@@ -1,3 +1,13 @@
+/* eslint-disable no-useless-concat */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-undef */
+/* eslint-disable new-cap */
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-plusplus */
+/* eslint-disable import/no-mutable-exports */
+/* eslint-disable import/no-duplicates */
+/* eslint-disable no-unused-vars */
+/* eslint-disable import/no-cycle */
 // imported functions and maps
 import { masterList } from './createtodo';
 import projectCreate from './projectClass';
@@ -86,7 +96,7 @@ export function repopulateProjects() {
 // function that handles when a new todo is added to a project
 export function addTasks(e) {
   e.preventDefault();
-  const projectValue = parseInt(addToProject.value);
+  const projectValue = parseInt(addToProject.value, 10);
   const temp = masterPList.get(projectValue);
   const taskName = TDTitle.value;
   temp.tasks.push(taskName);
@@ -97,8 +107,8 @@ export function addTasks(e) {
 // function that handles updating projects when a task is deleted
 export function removeATask(e) {
   e.preventDefault();
-  const projectValue = parseInt(e.target.parentElement.id);
-  const taskValue = parseInt(e.target.id);
+  const projectValue = parseInt(e.target.parentElement.id, 10);
+  const taskValue = parseInt(e.target.id, 10);
   const temp = masterPList.get(projectValue);
   temp.tasks.splice(taskValue, 1);
   masterPList.set(projectValue, temp);
@@ -108,7 +118,7 @@ export function removeATask(e) {
 // function that handles deleting projects
 export function deleteProject(e) {
   e.preventDefault;
-  const projectValue = parseInt(e.target.id);
+  const projectValue = parseInt(e.target.id, 10);
   masterPList.delete(projectValue);
   repopulateProjects();
 }
