@@ -18,6 +18,7 @@ import { IC } from './createtodo';
 import { checkCounter } from './createtodo';
 import { checkMapList } from './createtodo';
 import { addLSTODO } from './createtodo';
+import displayTaskAdd from './displayControl';
 
 const submitB = document.getElementById('submitB');
 const TDTitle = document.getElementById('TDTitle');
@@ -32,9 +33,18 @@ const projectSection = document.getElementById('projectSection');
 const priorityOptions = document.getElementById('priorityOptions');
 const deleteTask = document.getElementById('deleteToDoBtn');
 const addToProject = document.getElementById('addToProject');
+const toDoCreation = document.getElementById('toDoCreation');
+
+const homeTab = document.getElementById('homeTab');
+const tabTaskAdd = document.getElementById('taskAdd');
+const tabProjectAdd = document.getElementById('projectAdd');
+const tabTaskList = document.getElementById('taskList');
+const tabProjectList = document.getElementById('projectList');
 
 // event listeners
 submitB.addEventListener('click', (e) => {
   createNewToDo(e), addTasks(e);
 });
 submitP.addEventListener('click', (e) => createNewProject(e));
+
+tabTaskAdd.addEventListener('click', (e) => displayTaskAdd(e));
