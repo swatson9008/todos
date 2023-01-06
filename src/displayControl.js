@@ -9,6 +9,7 @@ export function displayHomeTab(e) {
   createProjects.style.display = 'none';
   toDoSection.style.display = 'none';
   projectSection.style.display = 'none';
+  mainContainer.style.backgroundImage = '';
 }
 
 export default function displayTaskAdd(e) {
@@ -18,6 +19,7 @@ export default function displayTaskAdd(e) {
   createProjects.style.display = 'none';
   toDoSection.style.display = 'none';
   projectSection.style.display = 'none';
+  mainContainer.style.backgroundImage = '';
 }
 
 export function displayProjectTab(e) {
@@ -27,6 +29,7 @@ export function displayProjectTab(e) {
   createProjects.style.display = 'block';
   toDoSection.style.display = 'none';
   projectSection.style.display = 'none';
+  mainContainer.style.backgroundImage = '';
 }
 
 export function displayTaskList(e){
@@ -36,6 +39,7 @@ export function displayTaskList(e){
   createProjects.style.display = 'none';
   toDoSection.style.display = 'block';
   projectSection.style.display = 'none';
+  mainContainer.style.backgroundImage = 'url("../src/img/papertexture.jpg")';
 }
 
 export function displayProjectLists(e){
@@ -45,4 +49,5 @@ export function displayProjectLists(e){
   createProjects.style.display = 'none';
   toDoSection.style.display = 'none';
   projectSection.style.display = 'block';
+  mainContainer.style.backgroundImage = 'url("../src/img/papertexture.jpg")';
 }

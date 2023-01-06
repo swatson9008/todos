@@ -172,6 +172,7 @@ function displayHomeTab(e) {
   createProjects.style.display = 'none';
   toDoSection.style.display = 'none';
   projectSection.style.display = 'none';
+  mainContainer.style.backgroundImage = '';
 }
 
 function displayTaskAdd(e) {
@@ -181,6 +182,7 @@ function displayTaskAdd(e) {
   createProjects.style.display = 'none';
   toDoSection.style.display = 'none';
   projectSection.style.display = 'none';
+  mainContainer.style.backgroundImage = '';
 }
 
 function displayProjectTab(e) {
@@ -190,6 +192,7 @@ function displayProjectTab(e) {
   createProjects.style.display = 'block';
   toDoSection.style.display = 'none';
   projectSection.style.display = 'none';
+  mainContainer.style.backgroundImage = '';
 }
 
 function displayTaskList(e){
@@ -199,6 +202,7 @@ function displayTaskList(e){
   createProjects.style.display = 'none';
   toDoSection.style.display = 'block';
   projectSection.style.display = 'none';
+  mainContainer.style.backgroundImage = 'url("../src/img/papertexture.jpg")';
 }
 
 function displayProjectLists(e){
@@ -208,6 +212,7 @@ function displayProjectLists(e){
   createProjects.style.display = 'none';
   toDoSection.style.display = 'none';
   projectSection.style.display = 'block';
+  mainContainer.style.backgroundImage = 'url("../src/img/papertexture.jpg")';
 }
 
 
@@ -516,6 +521,7 @@ const addToProject = document.getElementById('addToProject');
 const toDoCreation = document.getElementById('toDoCreation');
 const toDoCover = document.getElementById('toDoCover');
 const createProjects = document.getElementById('createProjects');
+const mainContainer = document.getElementById('mainContainer');
 
 const homeTab = document.getElementById('homeTab');
 const tabTaskAdd = document.getElementById('taskAdd');
