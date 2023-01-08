@@ -202,7 +202,7 @@ function displayTaskList(e){
   createProjects.style.display = 'none';
   toDoWrap.style.display = 'block';
   projectSection.style.display = 'none';
-  mainContainer.style.backgroundImage = 'url("/src/img/papertexture.jpg")';
+  mainContainer.style.backgroundImage = 'url("./src/img/papertexture.jpg")';
   mainContainer.style.backgroundSize = 'cover';
 }
 
@@ -213,7 +213,7 @@ function displayProjectLists(e){
   createProjects.style.display = 'none';
   toDoWrap.style.display = 'none';
   projectSection.style.display = 'block';
-  mainContainer.style.backgroundImage = 'url("/src/img/papertexture.jpg")';
+  mainContainer.style.backgroundImage = 'url("./src/img/papertexture.jpg")';
   mainContainer.style.backgroundSize = 'cover';
 }
 
