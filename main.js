@@ -1,4 +1,5 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/createtodo.js":
@@ -7,7 +8,6 @@
   \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "IC": () => (/* binding */ IC),
@@ -153,7 +153,6 @@ function prioritySwitch(e) {
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ displayTaskAdd),
@@ -227,7 +226,6 @@ function displayProjectLists(e){
   \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ICP": () => (/* binding */ ICP),
@@ -378,7 +376,6 @@ function deleteProject(e) {
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ projectCreate)
@@ -394,23 +391,12 @@ class projectCreate {
 
 /***/ }),
 
-/***/ "./src/style.css":
-/*!***********************!*\
-  !*** ./src/style.css ***!
-  \***********************/
-/***/ (() => {
-
-throw new Error("Module parse failed: Unexpected character '@' (2:0)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| \n> @font-face {\n|   font-family: listFont;\n|   src: url('./asset/IndieFlower-Regular.ttf');");
-
-/***/ }),
-
 /***/ "./src/toDoclass.js":
 /*!**************************!*\
   !*** ./src/toDoclass.js ***!
   \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ toDoCreate)
@@ -456,18 +442,6 @@ class toDoCreate {
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -498,9 +472,8 @@ class toDoCreate {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-"use strict";
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
@@ -510,8 +483,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _toDoclass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./toDoclass */ "./src/toDoclass.js");
 /* harmony import */ var _projectClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./projectClass */ "./src/projectClass.js");
 /* harmony import */ var _displayControl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./displayControl */ "./src/displayControl.js");
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_5__);
 /* eslint-disable no-sequences */
 /* eslint-disable max-len */
 /* eslint-disable import/no-duplicates */
@@ -520,7 +491,6 @@ __webpack_require__.r(__webpack_exports__);
 /* eslint-disable no-unused-expressions */
 // global variables
 // imported variables and functions
-
 
 
 
