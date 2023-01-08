@@ -1,7 +1,7 @@
 
 @font-face {
   font-family: listFont;
-  src: url('../src/asset/IndieFlower-Regular.ttf');
+  src: url('./asset/IndieFlower-Regular.ttf');
 }
 
 body {
