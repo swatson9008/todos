@@ -45,7 +45,6 @@ button {
   min-width: inherit;
   max-width: inherit;
   width: 100%;
-  border: 1px red solid;
 }
 
 #toDoSection {
