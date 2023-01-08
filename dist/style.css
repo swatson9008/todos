@@ -1,7 +1,7 @@
 
 @font-face {
-  font-family: listFont;
-  src: url('./asset/IndieFlower-Regular.ttf');
+  font-family: 'list-style';
+  src: url('../src/asset/IndieFlower-Regular.ttf');
 }
 
 body {
@@ -69,7 +69,7 @@ button {
 .ToDoListing {
   width: 200px;
   /*border: 1px red solid;*/
-  font-family: listFont;
+  font-family: 'list-style' ;
   font-size: 20px;
 }
 
