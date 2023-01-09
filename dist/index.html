@@ -1,69 +1,66 @@
-<head><script defer src="main.js"></script></head>Html Webpack Plugin:
-<pre>
-  Error: Child compilation failed:
-  Module not found: Error: Can't resolve './main.js' in '/home/summer/repos/todos/src'
-  ModuleNotFoundError: Module not found: Error: Can't resolve './main.js' in '/home/summer/repos/todos/  src'
-      at /home/summer/repos/todos/node_modules/webpack/lib/Compilation.js:2016:28
-      at /home/summer/repos/todos/node_modules/webpack/lib/NormalModuleFactory.js:798:13
-      at eval (eval at create (/home/summer/repos/todos/node_modules/tapable/lib/HookCodeFactory.js:33:  10), <anonymous>:10:1)
-      at /home/summer/repos/todos/node_modules/webpack/lib/NormalModuleFactory.js:270:22
-      at eval (eval at create (/home/summer/repos/todos/node_modules/tapable/lib/HookCodeFactory.js:33:  10), <anonymous>:9:1)
-      at /home/summer/repos/todos/node_modules/webpack/lib/NormalModuleFactory.js:434:22
-      at /home/summer/repos/todos/node_modules/webpack/lib/NormalModuleFactory.js:116:11
-      at /home/summer/repos/todos/node_modules/webpack/lib/NormalModuleFactory.js:670:25
-      at /home/summer/repos/todos/node_modules/webpack/lib/NormalModuleFactory.js:855:8
-      at /home/summer/repos/todos/node_modules/webpack/lib/NormalModuleFactory.js:975:5
-  
-  - Compilation.js:2016 
-    [todos]/[webpack]/lib/Compilation.js:2016:28
-  
-  - NormalModuleFactory.js:798 
-    [todos]/[webpack]/lib/NormalModuleFactory.js:798:13
-  
-  
-  - NormalModuleFactory.js:270 
-    [todos]/[webpack]/lib/NormalModuleFactory.js:270:22
-  
-  
-  - NormalModuleFactory.js:434 
-    [todos]/[webpack]/lib/NormalModuleFactory.js:434:22
-  
-  - NormalModuleFactory.js:116 
-    [todos]/[webpack]/lib/NormalModuleFactory.js:116:11
-  
-  - NormalModuleFactory.js:670 
-    [todos]/[webpack]/lib/NormalModuleFactory.js:670:25
-  
-  - NormalModuleFactory.js:855 
-    [todos]/[webpack]/lib/NormalModuleFactory.js:855:8
-  
-  - NormalModuleFactory.js:975 
-    [todos]/[webpack]/lib/NormalModuleFactory.js:975:5
-  
-  - child-compiler.js:169 
-    [todos]/[html-webpack-plugin]/lib/child-compiler.js:169:18
-  
-  - Compiler.js:551 finalCallback
-    [todos]/[webpack]/lib/Compiler.js:551:5
-  
-  - Compiler.js:577 
-    [todos]/[webpack]/lib/Compiler.js:577:11
-  
-  - Compiler.js:1196 
-    [todos]/[webpack]/lib/Compiler.js:1196:17
-  
-  
-  - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
-    [todos]/[tapable]/lib/Hook.js:18:14
-  
-  - Compiler.js:1192 
-    [todos]/[webpack]/lib/Compiler.js:1192:33
-  
-  - Compilation.js:2787 finalCallback
-    [todos]/[webpack]/lib/Compilation.js:2787:11
-  
-  - Compilation.js:3092 
-    [todos]/[webpack]/lib/Compilation.js:3092:11
-  
-  
-</pre>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos</title>
+    
+<script defer src="main.js"></script></head>
+<body>
+    <div id="tabContainer">
+        <div id="homeTab"><button>Home</button></div>
+        <div id="taskAdd"><button>Add a Todo</button></div>
+        <div id="projectAdd"><button>Add a Project</button></div>
+        <div id="taskList"><button>Todo List</button></div>
+        <div id="projectList"><button>Project List</button></div>
+    </div>
+    <div id="mainContainer">
+        <div id="toDoCover">Welcome to Todos!</div>
+        <div id="toDoCreation">
+            <form>
+            <label for="TDTitle">Title:</label>
+            <input type="TDTitle" name="TDTitle" id="TDTitle"><p></p>
+            <label for="TDDescrip">Description:</label>
+            <input type="text" name="TDDescrip" id="TDDescrip"><p></p>
+            <label for="TDDueDate">Due Date:</label>
+            <input type="date" name="TDDueDate" id="TDDueDate"><p></p>
+            <label for="TDPriority">Priority:</label>
+            <select name="TDPriority" id="TDPriority">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+            </select><p></p>
+            <label for="addToProject">Add to Project</label>
+            <select name="addToProject" id="addToProject">
+
+            </select>
+            <p></p>
+            <button id="submitB">Submit</button>
+            </form>
+        </div>
+            <p></p>
+            <p></p>
+        <div id="createProjects">
+            <label for="TDProject">Project Name:</label>
+            <input type="TDProject" name="TDProject" id="TDProject"><p></p>
+            <button id="submitP">Submit</button>
+        </div><div id="toDoWrap">
+        <div id="toDoSection"></div></div>
+        <div id="projectSection"></div>
+
+    </div>
+    <template id="priorityOptions">
+        <label for="TDPriorityC">Edit Priority:</label>
+        <select name="TDPriorityC">
+        <option value="Default"></option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+    </template>
+    <meta http-equiv='cache-control' content='no-cache'> 
+    <meta http-equiv='expires' content='0'> 
+    <meta http-equiv='pragma' content='no-cache'>
+    <div id="footer"><div id="footertext">Summer © </div><div id="footerimg"><img src="0035c307a36c17babb8d.png"></div></div>
+</body>
+</html>
