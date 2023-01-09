@@ -23,6 +23,7 @@ import { displayHomeTab } from './displayControl';
 import { displayProjectTab } from './displayControl';
 import { displayTaskList } from './displayControl';
 import { displayProjectLists } from './displayControl';
+import './style.css';
 
 const submitB = document.getElementById('submitB');
 const TDTitle = document.getElementById('TDTitle');
