@@ -2,7 +2,7 @@
   "name": "todos",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "gh-deploy": "git push origin :gh-pages && git subtree push --prefix dist origin gh-pages",
