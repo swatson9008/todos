@@ -3,10 +3,10 @@
 /* eslint-disable no-console */
 
 // imported image for bg
-// import paperTexture from './asset/papertexture.jpg';
+import paperTexture from './asset/papertexture.jpg';
 
-// const paperBG = new Image();
-// paperBG.src = paperTexture;
+const paperBG = new Image();
+paperBG.src = paperTexture;
 
 export function displayHomeTab(e) {
   e.preventDefault();
