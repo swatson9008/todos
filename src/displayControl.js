@@ -5,9 +5,6 @@
 // imported image for bg
 import paperTexture from './asset/papertexture.jpg';
 
-const paperBG = new Image();
-paperBG.src = paperTexture;
-
 export function displayHomeTab(e) {
   e.preventDefault();
   toDoCover.style.display = 'block';
@@ -45,7 +42,7 @@ export function displayTaskList(e){
   createProjects.style.display = 'none';
   toDoWrap.style.display = 'block';
   projectSection.style.display = 'none';
-  mainContainer.style.backgroundImage = paperBG;
+  mainContainer.style.backgroundImage = paperTexture;
   mainContainer.style.backgroundSize = 'cover';
 }
 
@@ -56,6 +53,6 @@ export function displayProjectLists(e){
   createProjects.style.display = 'none';
   toDoWrap.style.display = 'none';
   projectSection.style.display = 'block';
-  mainContainer.style.backgroundImage = paperBG;
+  mainContainer.style.backgroundImage = paperTexture;
   mainContainer.style.backgroundSize = 'cover';
 }
