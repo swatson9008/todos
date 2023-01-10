@@ -24,6 +24,7 @@ import { displayProjectTab } from './displayControl';
 import { displayTaskList } from './displayControl';
 import { displayProjectLists } from './displayControl';
 import './style.css';
+// import paperTexture from './asset/papertexture.jpg';
 
 const submitB = document.getElementById('submitB');
 const TDTitle = document.getElementById('TDTitle');
@@ -49,6 +50,9 @@ const tabTaskAdd = document.getElementById('taskAdd');
 const tabProjectAdd = document.getElementById('projectAdd');
 const tabTaskList = document.getElementById('taskList');
 const tabProjectList = document.getElementById('projectList');
+
+// const paperBG = new Image();
+// paperBG.src = paperTexture;
 
 // event listeners
 submitB.addEventListener('click', (e) => {

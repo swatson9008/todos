@@ -710,6 +710,12 @@ __webpack_require__.r(__webpack_exports__);
 /* eslint-disable no-undef */
 /* eslint-disable no-console */
 
+// imported image for bg
+// import paperTexture from './asset/papertexture.jpg';
+
+// const paperBG = new Image();
+// paperBG.src = paperTexture;
+
 function displayHomeTab(e) {
   e.preventDefault();
   toDoCover.style.display = 'block';
@@ -747,7 +753,7 @@ function displayTaskList(e){
   createProjects.style.display = 'none';
   toDoWrap.style.display = 'block';
   projectSection.style.display = 'none';
-  mainContainer.style.backgroundImage = '../src/asset/papertexture.jpg';
+  mainContainer.style.backgroundImage = paperBG;
   mainContainer.style.backgroundSize = 'cover';
 }
 
@@ -758,7 +764,7 @@ function displayProjectLists(e){
   createProjects.style.display = 'none';
   toDoWrap.style.display = 'none';
   projectSection.style.display = 'block';
-  mainContainer.style.backgroundImage = '../src/asset/papertexture.jpg';
+  mainContainer.style.backgroundImage = paperBG;
   mainContainer.style.backgroundSize = 'cover';
 }
 
@@ -1141,6 +1147,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// import paperTexture from './asset/papertexture.jpg';
 
 const submitB = document.getElementById('submitB');
 const TDTitle = document.getElementById('TDTitle');
@@ -1166,6 +1173,9 @@ const tabTaskAdd = document.getElementById('taskAdd');
 const tabProjectAdd = document.getElementById('projectAdd');
 const tabTaskList = document.getElementById('taskList');
 const tabProjectList = document.getElementById('projectList');
+
+// const paperBG = new Image();
+// paperBG.src = paperTexture;
 
 // event listeners
 submitB.addEventListener('click', (e) => {
