@@ -44,7 +44,7 @@ button {
 
 }
 
-#toDoCreation, #createProjects, #toDoSection, #projectSection, #toDoWrap {
+#toDoCreation, #createProjects, #toDoSection, #projectSection, #toDoWrap, #projectWrap {
   display: none;
 }
 
@@ -67,6 +67,29 @@ button {
 }
 
 .ToDoListing {
+  width: 200px;
+  /*border: 1px red solid;*/
+  font-family: 'list-style' ;
+  font-size: 20px;
+}
+
+#projectWrap {
+  min-width: inherit;
+  max-width: inherit;
+  width: 100%;
+}
+
+#projectSection {
+  color: darkred;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-row: 1;
+  /*border: 1px red solid;*/
+  justify-items: center;
+  gap: 20px;
+}
+
+.projectLists {
   width: 200px;
   /*border: 1px red solid;*/
   font-family: 'list-style' ;

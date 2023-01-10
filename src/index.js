@@ -44,6 +44,7 @@ const toDoCover = document.getElementById('toDoCover');
 const createProjects = document.getElementById('createProjects');
 const mainContainer = document.getElementById('mainContainer');
 const toDoWrap = document.getElementById('toDoWrap');
+const projectWrap = document.getElementById('projectWrap');
 
 const homeTab = document.getElementById('homeTab');
 const tabTaskAdd = document.getElementById('taskAdd');

@@ -11,7 +11,7 @@ export function displayHomeTab(e) {
   toDoCreation.style.display = 'none';
   createProjects.style.display = 'none';
   toDoWrap.style.display = 'none';
-  projectSection.style.display = 'none';
+  projectWrap.style.display = 'none';
   mainContainer.style.backgroundImage = '';
 }
 
@@ -21,7 +21,7 @@ export default function displayTaskAdd(e) {
   toDoCreation.style.display = 'block';
   createProjects.style.display = 'none';
   toDoWrap.style.display = 'none';
-  projectSection.style.display = 'none';
+  projectWrap.style.display = 'none';
   mainContainer.style.backgroundImage = '';
 }
 
@@ -31,7 +31,7 @@ export function displayProjectTab(e) {
   toDoCreation.style.display = 'none';
   createProjects.style.display = 'block';
   toDoWrap.style.display = 'none';
-  projectSection.style.display = 'none';
+  projectWrap.style.display = 'none';
   mainContainer.style.backgroundImage = '';
 }
 
@@ -41,7 +41,7 @@ export function displayTaskList(e){
   toDoCreation.style.display = 'none';
   createProjects.style.display = 'none';
   toDoWrap.style.display = 'block';
-  projectSection.style.display = 'none';
+  projectWrap.style.display = 'none';
   mainContainer.style.backgroundImage = `url(${paperTexture})`;
   mainContainer.style.backgroundSize = 'cover';
 }
@@ -52,7 +52,7 @@ export function displayProjectLists(e){
   toDoCreation.style.display = 'none';
   createProjects.style.display = 'none';
   toDoWrap.style.display = 'none';
-  projectSection.style.display = 'block';
+  projectWrap.style.display = 'block';
   mainContainer.style.backgroundImage = `url(${paperTexture})`;
   mainContainer.style.backgroundSize = 'cover';
 }
