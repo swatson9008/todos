@@ -751,7 +751,7 @@ function displayTaskList(e){
   createProjects.style.display = 'none';
   toDoWrap.style.display = 'block';
   projectSection.style.display = 'none';
-  mainContainer.style.backgroundImage = _asset_papertexture_jpg__WEBPACK_IMPORTED_MODULE_0__;
+  mainContainer.style.backgroundImage = `url(${_asset_papertexture_jpg__WEBPACK_IMPORTED_MODULE_0__})`;
   mainContainer.style.backgroundSize = 'cover';
 }
 
@@ -762,7 +762,7 @@ function displayProjectLists(e){
   createProjects.style.display = 'none';
   toDoWrap.style.display = 'none';
   projectSection.style.display = 'block';
-  mainContainer.style.backgroundImage = _asset_papertexture_jpg__WEBPACK_IMPORTED_MODULE_0__;
+  mainContainer.style.backgroundImage = `url(${_asset_papertexture_jpg__WEBPACK_IMPORTED_MODULE_0__})`;
   mainContainer.style.backgroundSize = 'cover';
 }
 
