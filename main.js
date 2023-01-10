@@ -172,15 +172,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "displayProjectTab": () => (/* binding */ displayProjectTab),
 /* harmony export */   "displayTaskList": () => (/* binding */ displayTaskList)
 /* harmony export */ });
+/* harmony import */ var _asset_papertexture_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./asset/papertexture.jpg */ "./src/asset/papertexture.jpg");
+/* harmony import */ var _asset_papertexture_jpg__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_asset_papertexture_jpg__WEBPACK_IMPORTED_MODULE_0__);
 /* eslint-disable space-before-blocks */
 /* eslint-disable no-undef */
 /* eslint-disable no-console */
 
 // imported image for bg
-// import paperTexture from './asset/papertexture.jpg';
 
-// const paperBG = new Image();
-// paperBG.src = paperTexture;
+
+const paperBG = new Image();
+paperBG.src = (_asset_papertexture_jpg__WEBPACK_IMPORTED_MODULE_0___default());
 
 function displayHomeTab(e) {
   e.preventDefault();
@@ -528,8 +530,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _displayControl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./displayControl */ "./src/displayControl.js");
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _asset_papertexture_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./asset/papertexture.jpg */ "./src/asset/papertexture.jpg");
-/* harmony import */ var _asset_papertexture_jpg__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_asset_papertexture_jpg__WEBPACK_IMPORTED_MODULE_6__);
 /* eslint-disable no-sequences */
 /* eslint-disable max-len */
 /* eslint-disable import/no-duplicates */
@@ -554,7 +554,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
+// import paperTexture from './asset/papertexture.jpg';
 
 const submitB = document.getElementById('submitB');
 const TDTitle = document.getElementById('TDTitle');
@@ -581,8 +581,8 @@ const tabProjectAdd = document.getElementById('projectAdd');
 const tabTaskList = document.getElementById('taskList');
 const tabProjectList = document.getElementById('projectList');
 
-const paperBG = new Image();
-paperBG.src = (_asset_papertexture_jpg__WEBPACK_IMPORTED_MODULE_6___default());
+// const paperBG = new Image();
+// paperBG.src = paperTexture;
 
 // event listeners
 submitB.addEventListener('click', (e) => {
