@@ -81,7 +81,7 @@ export function repopulateTask() {
       '<p>' +
       values.dueDate +
       '<p>' +
-      values.priority;
+      'Priority: </lb>' + values.priority;
     toDoSection.appendChild(newSection);
     const changePrioritySection = document.createElement('div');
     changePrioritySection.classList.add('PriorityBtn');

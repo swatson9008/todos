@@ -127,6 +127,11 @@ button {
   font-size: 20px;
 }
 
+#toDoWrap select {
+  all: unset;
+  border: black 1px dotted;
+}
+
 #projectWrap {
   min-width: inherit;
   max-width: inherit;
