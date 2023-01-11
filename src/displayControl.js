@@ -4,6 +4,7 @@
 
 // imported image for bg
 import paperTexture from './asset/papertexture.jpg';
+import folderTexture from './asset/folderbg.jpg';
 
 export function displayHomeTab(e) {
   e.preventDefault();
@@ -12,7 +13,7 @@ export function displayHomeTab(e) {
   createProjects.style.display = 'none';
   toDoWrap.style.display = 'none';
   projectWrap.style.display = 'none';
-  mainContainer.style.backgroundImage = '';
+  mainContainer.style.backgroundImage = `linear-gradient(0deg, rgba(158, 158, 158, 0.3), rgba(165, 165, 165, 0.3)), url(${folderTexture})`;
 }
 
 export default function displayTaskAdd(e) {
@@ -22,7 +23,7 @@ export default function displayTaskAdd(e) {
   createProjects.style.display = 'none';
   toDoWrap.style.display = 'none';
   projectWrap.style.display = 'none';
-  mainContainer.style.backgroundImage = '';
+  mainContainer.style.backgroundImage = `linear-gradient(0deg, rgba(158, 158, 158, 0.3), rgba(165, 165, 165, 0.3)), url(${folderTexture})`;
 }
 
 export function displayProjectTab(e) {
@@ -32,7 +33,7 @@ export function displayProjectTab(e) {
   createProjects.style.display = 'block';
   toDoWrap.style.display = 'none';
   projectWrap.style.display = 'none';
-  mainContainer.style.backgroundImage = '';
+  mainContainer.style.backgroundImage = `linear-gradient(0deg, rgba(158, 158, 158, 0.3), rgba(165, 165, 165, 0.3)), url(${folderTexture})`;
 }
 
 export function displayTaskList(e){
