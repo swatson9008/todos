@@ -4,6 +4,11 @@
   src: url('../src/asset/IndieFlower-Regular.ttf');
 }
 
+@font-face {
+  font-family: 'tab-style';
+  src: url('../src/asset/Lobster-Regular.ttf');
+}
+
 body {
   background-color: lightsteelblue;
   display: grid;
@@ -72,6 +77,10 @@ button {
 #homeTab:hover, #taskAdd:hover, #projectAdd:hover, #taskList:hover, #projectList:hover {
   position: relative;
   top: -5px;
+}
+
+#homeTab, #taskAdd, #projectAdd, #taskList, #projectList {
+  font-family: 'tab-style';
 }
 
 #mainContainer {

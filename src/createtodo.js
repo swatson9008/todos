@@ -92,7 +92,7 @@ export function repopulateTask() {
     const deleteSection = document.createElement('div');
     deleteSection.classList.add('deleteToDoBtn');
     deleteSection.id = values.project;
-    deleteSection.innerHTML = '<button id =' + keys + '>Delete Task?</button>';
+    deleteSection.innerHTML = '<button id =' + keys + '>Remove Task?</button>';
     deleteSection.addEventListener('click', (e) => {
       taskdelete(e), removeATask(e);
     });

@@ -87,7 +87,7 @@ export function repopulateProjects() {
     addToProject.appendChild(projectOption);
     const projectDelete = document.createElement('div');
     projectDelete.id = keys;
-    projectDelete.innerHTML = `<button id =${keys}>Delete Project?</button>`;
+    projectDelete.innerHTML = `<button id =${keys}>Remove Project?</button>`;
     projectDelete.addEventListener('click', (e) => deleteProject(e));
     newProjectSection.appendChild(projectDelete);
   });
